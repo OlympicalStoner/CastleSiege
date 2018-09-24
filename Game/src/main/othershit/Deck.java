@@ -8,7 +8,7 @@ public class Deck {
 
     public void shuffle(){
         Random srand = new Random();
-        for(int i = 0; i < this.cards.size() * 2; ++i ) {
+        for(int i = 0; i < this.cards.size(); ++i ) {
             Card storage = this.cards.get(i);
             this.cards.remove(i);
             this.cards.add(srand.nextInt(this.cards.size() - 1), storage);
@@ -27,5 +27,9 @@ public class Deck {
 
     public Deck(LinkedList<Card> cards) {
         this.cards = cards;
+    }
+
+    public int getDeckSize(){
+        return this.cards.size();
     }
 }
